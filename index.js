@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import connectDB from "./utils/db.js"; // Import the MongoDB connection file
 import {adminRoutes} from "./Routes/AdminRoute.js";
 import { employeeRouter } from "./Routes/EmployeeRoute.js";
+import bodyParser from "body-parser";
 
 dotenv.config(); // Load environment variables
 
@@ -16,9 +17,10 @@ const port = process.env.PORT || 3003;
 connectDB();
 
 // Middleware
+app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["https://worksuite-employee-attendance-and-management-system.vercel.app" , "http://localhost:5173"],
+    origin: ["https://employee-management-system-frontend-livid.vercel.app/" , "http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
