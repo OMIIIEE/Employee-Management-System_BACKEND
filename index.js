@@ -19,7 +19,7 @@ connectDB();
 // Middleware
 app.use(bodyParser.json());
 // Define your frontend domain
-const allowedOrigins = ['https://employee-management-system-frontend-livid.vercel.app'];
+const allowedOrigins = ['https://employee-management-system-frontend-livid.vercel.app',"https://employee-management-system-frontend-2527pugmf.vercel.app/"];
 
 app.use(
   cors({
