@@ -18,11 +18,14 @@ connectDB();
 
 // Middleware
 app.use(bodyParser.json());
+// Define your frontend domain
+const allowedOrigins = ['https://employee-management-system-frontend-livid.vercel.app'];
+
 app.use(
   cors({
-    origin: ["https://employee-management-system-frontend-livid.vercel.app/" , "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true, // If you're using cookies or HTTP authentication
   })
 );
 app.use(express.json());
